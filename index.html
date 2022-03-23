@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html >
+
+<head>
+    
+    <title>TEST</title>
+    <style>
+        iframe{
+            width: 50%;
+            height: 100px;
+            border: 3px black solid;
+        }
+    </style>
+</head>
+<body>
+    <p id="par">Body</p>
+    <h1 ></h1>
+    <input type="button" value="submit" onclick="display()" id="btn">
+    <script>
+        // function display(){
+        //     document.getElementById("btn").addEventListener('click',()=>
+        // console.log("Callback"))
+        // console.log("Hello World")
+        // }
+            function dat(position){
+                const cur = new Date();
+                console.log(cur)
+                document.getElementById('par').innerText = cur
+                
+                console.log(position.coords.latitude
+                )
+            }
+        
+      </script>
+      <a href="ind.html">click</a>
+      <button onclick="dat()">click</button>
+      <iframe src="ind.html" frameborder="0"></iframe>
+</body>
+  
+
+
+
+  </html>

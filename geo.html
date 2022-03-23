@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+</head>
+<body>
+    <a id="map-link" href="">click</a>
+    <p id="para">success</p>
+    <script>
+        console.log("hello")
+            if(!navigator.geolocation){
+                console.log("Your browser has not supported this api")
+            }
+            else{
+                navigator.geolocation.getCurrentPosition(success,error)
+            }
+        
+        function success(position){
+            const lat = position.coords.latitude
+            const lon = position.coords.longitude
+           const  mapLink = document.getElementById("map-link");
+          
+            mapLink.href = `https://www.openstreetmap.org/#map=18/${lat}/${lon}`;
+            mapLink.textContent=`Latitude : ${lat} and Longitude : ${lon}`
+        }
+        function error(mesg){
+            document.getElementById("para").innerText="Not supported"
+        }
+       
+    </script>
+</body>
+</html>
